@@ -8,6 +8,7 @@ function handleClick(target){
 
    const itemName =  target.childNodes[5].innerText
    const li = document.createElement('li')
+   li.style.listStyleType = 'ol'
    li.innerText = itemName
 
    productsNameContainer.appendChild(li)
@@ -33,6 +34,8 @@ function handleClick(target){
      }
 }
 
+
+
 document.getElementById('coupon').addEventListener('click', function(){
      const couponValue = document.getElementById("couponCode")
      const couponValueString = couponValue.value
@@ -47,19 +50,28 @@ document.getElementById('coupon').addEventListener('click', function(){
      if(couponValueString === 'SELL200'){
            discountValueAmount = total * 20/100 
            discountValue.innerText = discountValueAmount
-
+          
            subTotalAmount = total - discountValueAmount
            subTotal.innerText = subTotalAmount
+           
      }else{
-          console.log('hello');
+          alert("Your coupon code is not valid")
      }
      
 })
-//     const withdrawTotal = document.getElementById('withdraw-total') 
-//     const withdrawTotalString = withdrawTotal.innerText
-//     const withdrawTotalAmount = parseFloat(withdrawTotalString)
-//     const withdrawTotalSum = withdrawTotalAmount + withdrawAmount
-//     withdrawTotal.innerText = withdrawTotalSum
+
+
+
+document.getElementById('resetBtn').addEventListener('click', function(){
+     let productName = document.getElementById('productsName').innerText = ''
+     let totalPrice =  document.getElementById('total_price').innerText = "0"
+     let discount =  document.getElementById('discount').innerText = '0'
+     let subTotal = document.getElementById('subTotal').innerText = '0'
+     if(productName === '' && totalPrice === '0' && discount === "0" && subTotal === '0'){
+          window.location.href = 'index.html'
+     }
+})
+
 
 
 
