@@ -24,7 +24,7 @@ function handleClick(target){
    total = parseFloat(total) + priceFloat
 
 
-   document.getElementById('total_price').innerText = total
+   document.getElementById('total_price').innerText = total + 'TK'
 
 
      if(total >= 200){
@@ -49,10 +49,10 @@ document.getElementById('coupon').addEventListener('click', function(){
      let subTotalAmount = parseFloat(subTotalString) 
      if(couponValueString === 'SELL200'){
            discountValueAmount = total * 20/100 
-           discountValue.innerText = discountValueAmount
+           discountValue.innerText = discountValueAmount + 'TK'
           
-           subTotalAmount = total - discountValueAmount
-           subTotal.innerText = subTotalAmount
+           subTotalAmount = total - discountValueAmount 
+           subTotal.innerText = subTotalAmount + 'TK'
            
      }else{
           alert("Your coupon code is not valid")
